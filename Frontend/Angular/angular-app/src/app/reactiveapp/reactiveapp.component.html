@@ -1,0 +1,36 @@
+<h2>ReactiveApp</h2>
+
+<form (ngSubmit)="addUser()" [formGroup] = 'myform'>
+
+    Name: <input type="text" formControlName = 'uname'/>
+    <div *ngIf = "uname.errors?.['required']">Name cant be Blank</div>
+
+    Password: <input type="password" formControlName = 'pass'/>
+    <div *ngIf = 'pass.invalid'>
+        <div *ngIf = "pass.errors?.['required']">Password cant be Blank</div>
+        <div *ngIf = "pass.errors?.['minlength']">Password must be greater than 6 characters</div>
+    </div>
+
+    Email: <input type="text" formControlName = 'email' />
+    <div *ngIf = 'email.invalid'>
+        <div *ngIf = "email.errors?.['required']">Email cant be Blank</div>
+        <div *ngIf = "email.errors?.['email']">Email must be Correct</div>
+    </div>
+
+    Department: <input type="text" formControlName = 'dept'/>
+    <div *ngIf = "dept.errors?.['required']">Department cant be Blank</div>
+
+    City: <input type="text" formControlName = 'city'/>
+    <div *ngIf = "city.errors?.['required']">City cant be Blank</div>
+
+    Country: <input type="text" formControlName = 'country'/>
+    <div *ngIf = "country.errors?.['required']">Country cant be Blank</div>
+
+    <button [disabled] = 'myform.invalid'>Add User</button>
+
+</form>
+
+<button (click) = 'loadUsers()'>Load Users</button>
+<ul>
+    <li *ngFor = 'let user of userData'>{{user.uname}} - {{user.email}}</li>
+</ul>

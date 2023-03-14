@@ -1,0 +1,11 @@
+<div>
+    <h2>Services</h2>
+    <ul>
+        <li *ngFor = "let service of serviceList">
+            <h3>{{service.type}}</h3>
+            <img src = {{service.image}}/>
+            <h5>{{service.description}}</h5>
+        </li>
+    </ul>
+</div>
+
