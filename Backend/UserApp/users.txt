@@ -1,0 +1,4 @@
+admin/admin@mail.com/pune/hrms
+manager/manager@mail.com/london/finance
+qa/qa@mail.com/newyork/banking
+sales/sales@mail.com/delhi/hrms
